@@ -17,6 +17,9 @@ function draw(){
   x += vx;
   y += vy;
 
+  if(keyIsDown(LEFT_ARROW)){ x -= 10; }
+  if(keyIsDown(RIGHT_ARROW)){ x += 10; }
+  //if(keyIsDown((" ".charCodeAt(0)))){ y += 10; }
 
 
   // 重力（コメント機能でオンオフ切り替えて実行してみましょう）
