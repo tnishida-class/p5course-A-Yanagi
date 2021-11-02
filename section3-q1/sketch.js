@@ -11,16 +11,15 @@ function setup(){
 function draw(){
   background(160, 192, 255);
   count = (count + 1) % cycle;
-  // BLANK[1]
- let size =　count
- if(40 < count && count< 60){
+  let size =　count
+  
+  if(40 < count || count　> 60){
    ellipse(width / 2, height / 2, size*2);
  }
- else{
+  else{
    ellipse(width / 2, height / 2, size);
-
- if(mouseIsPressed){
-   count = (count + 5)   //カウントを速くする
  }
+  if(mouseIsPressed){
+   count = (count + 5)   //カウントを速くする
  }
 }
