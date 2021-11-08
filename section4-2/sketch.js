@@ -17,15 +17,19 @@ function draw(){
     b.x += b.vx;
     b.y += b.vy;
   }
-}
+
+  //何もしなくてもボールがでてくる。時間ごとに変化があるようにする。
+    // const b = { x: width/2, y: height/2, size: 20,  vx: random(5), vy: random(5) };
+    // balls.push(b);
+ }
 
 function mouseDragged(){
-  const dx = mouseX - pmouseX;
-  const dy = mouseY - pmouseY;
-  if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
-    balls.push(b);
-  }
+const dx = mouseX - pmouseX;
+ const dy = mouseY - pmouseY;
+ if(mag(dx, dy) > 5){
+   const b = { x: mouseX, y: mouseY, size: random(10) + 20, vx: dx, vy: dy };
+   balls.push(b);
+ }
 }
 
 function windowResized(){
