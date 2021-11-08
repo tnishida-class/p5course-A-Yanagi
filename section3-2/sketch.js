@@ -14,12 +14,14 @@ function setup(){
 function draw(){
   background(160, 192, 255);
   ellipse(x, y, 20, 20);
-  x += vx;
+  // += vx;
   y += vy;
 
   if(keyIsDown(LEFT_ARROW)){ x -= 10; }
   if(keyIsDown(RIGHT_ARROW)){ x += 10; }
-  //if(keyIsDown((" ".charCodeAt(0)))){ y += 10; }
+  if(y >= height - 10 && keyIsDown(" ".charCodeAt(0))){
+    vy = -20;
+  }
 
 
   // 重力（コメント機能でオンオフ切り替えて実行してみましょう）
@@ -32,10 +34,14 @@ function draw(){
   // if(y < 0){ y = height; }
 
 　// 端の処理パターン (2) 跳ね返る
-  if(x < 0 || x > width){ vx = -1 * vx; } //&&はかつ、||はまたは。
-  if(y < 0 || y > height){ vy = -1 * vy; }
+  //if(x < 0 || x > width){ vx = -1 * vx; } //&&はかつ、||はまたは。
+  //if(y < 0 || y > height){ vy = -1 * vy; }
+  //x = constrain(x, 0, width);
+  //y = constrain(y, 0, height);
+
+  if (y > height - 10){vy = 0;}
   x = constrain(x, 0, width);
-  y = constrain(y, 0, height);
+  y = constrain(y, 0, height - 10);
 }
 
 function windowResized(){
