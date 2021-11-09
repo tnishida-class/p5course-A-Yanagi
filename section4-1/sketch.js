@@ -62,10 +62,9 @@ function setup(){
     fill(0);
     text(scores[i].toPrecision(3), i * dx, height - h);
   }
-function draw(){
-  stoke(255, 255, 0)
-  line(0, height - height * average / 100, width, height - height * average / 100)
+
+  stroke(255, 0, 255)
+  line(0, height * (100 - average) / 100, width, height * (100 - average) / 100)
    //BLANK[5] 平均点の線を引きます
-}
 
 }
