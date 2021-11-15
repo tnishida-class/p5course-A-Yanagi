@@ -7,12 +7,12 @@ function setup(){
   // 配列をランダムに初期化する
   let scores = [];
   for(let i = 0; i < 10; i++){
-    scores[i] = random(20, 100); // 60以上100未満のランダムな数を代入
+    scores[i] = random(20, 100); // 20以上100未満のランダムな数を代入
   }
 
   // 円グラフを描くには割合が必要なので合計を計算しておく
   let total = 0;
   for(let i = 0; i < scores.length; i++){ total += scores[i]; }
-
+  arc(width / 2, height / 2, 150, 150, 0, )
   // BLANK[1]
 }
