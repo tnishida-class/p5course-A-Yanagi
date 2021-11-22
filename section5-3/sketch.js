@@ -55,7 +55,16 @@ function dayOfYear(y, m, d){
 }
 
 function dayOfWeek(y, m, d){
-  // BLANK[2]
+  // BLANK[2]]
+  //step1 count number of days from 1970/01/01
+  let count = 0;
+  for(let i = 1970; i < y; i++){
+    count += daysInYear(i);
+  }
+  count += dayOfYear(y, m, d);
+
+  return (count + 3) % 7
+  }
 }
 
 function dayOfWeekAsString(dow){
